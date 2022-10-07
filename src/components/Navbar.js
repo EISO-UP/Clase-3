@@ -1,30 +1,47 @@
-import React from 'react'
+import React from 'react';
+import {Link, NavLink, useNavigate} from 'react-router-dom';
 
 export const Navbar = () => {
+
+const navigate = useNavigate();
+const handleLogout = () => {
+  navigate('/login', {
+    replace: true
+  })
+}
+
   return (
     <>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+            <Link 
+              className='navbar-brand'
+              to='/'
+              >
+              MovieApp
+            </Link>
+            <Link 
+              className='navbar-brand'
+              to='/home'
+              >
+              Home
+            </Link>
+            <Link 
+              className='navbar-brand'
+              to='/top10'
+              >
+              Top10
+            </Link>
+            <Link 
+              className='navbar-brand'
+              to='/trending'
+              >
+              Trending
+            </Link>
+            
+            <ul className='navbar-collapse justify-content-end'>
+              <Link className='nav-link' to='/login' onClick = {handleLogout}>Logout</Link>
             </ul>
-            </div>
         </div>
         </nav>  
     </>
