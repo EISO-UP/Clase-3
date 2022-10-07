@@ -5,6 +5,7 @@ import { Trending } from '../pages/Trending'
 import {Home} from '../pages/Home'
 import {Top10} from '../pages/Top10'
 import {Login} from '../pages/Login'
+import { Movie } from '../pages/Movie'
 
 export const MovieRoutes = () => {
   return (
@@ -16,6 +17,7 @@ export const MovieRoutes = () => {
           <Route path='/Top10' element={<Top10/>}/>
           <Route path='/Login' element={<Login/>}/>
           <Route path='/*' element={<Home/>}/>
+          <Route path='/movie/:movieId' element={<Movie/>}/>
         </Routes>
     </>
   )
